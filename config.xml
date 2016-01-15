@@ -7,7 +7,7 @@
     <author email="rishie_88@hotmail.com" href="http://ccdiff.rishie.se">
         Rishie Sharma
     </author>
-    <content src="start.html" />
+    <content src="index.html" />
     <access origin="*" />
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarStyle" value="default" />
