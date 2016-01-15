@@ -1,0 +1,120 @@
+.big {
+    font-size: 80px;
+}
+
+.hide {
+    display: none;
+}
+
+.highlight {
+    background-color: #ffff88;
+}
+
+.big {
+    line-height: 1.3em;
+}
+
+.font {
+    display: inline-block;
+    vertical-align: bottom;
+    text-align: center;
+    padding: 0.5em;
+    width: 80px;
+}
+
+.country-code {
+    border-radius: 5px;
+    padding: 3px;
+    margin-right: 2px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    background-color: #4e4e4e;
+    color: white;
+    font-size: 14px;
+    vertical-align: top;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 8px 0;
+}
+
+input {
+    display: block;
+}
+
+#TextBoxHolder {
+    text-align: center;
+    width:  90%;
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+}
+
+#TextBox {
+    height: 30px;
+    display: table-cell;
+    width: 100%;
+    border: 1px solid #888888;
+    border-right: none;
+    border-radius: 0px;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+}
+
+#CharacterList {
+    text-align: center;
+    visibility: hidden;
+}
+
+#Code {
+    border: 1px solid #888888;
+    height: 28px;
+    display: table-cell;
+    vertical-align: middle;
+    line-height: 28px;
+    padding: 0 5px 0 10px;
+    font-family: monospace;
+    font-size:  14px;
+    white-space: nowrap;
+    width: 1px;
+}
+
+#LoadingDiv {
+    font-size: 2em;
+    width: 100%;
+    text-align: center;
+    margin-top: 2em;
+    font-family: monospace;
+}
+
+#Variants h2 {
+    font-size: 20px;
+    font-family: monospace;
+    display: inline-block;
+    vertical-align: top;
+    line-height: 3em;
+    margin: 0;
+}
+
+#Variants {
+    margin-left: 2em;
+    visibility: hidden;
+}
+
+#Variants span {
+    font-size: 3em;
+}
+
+html.wf-active #CharacterList, html.wf-active #Variants {
+    visibility: visible;
+}
+
+html.wf-active #LoadingDiv {
+    display: none;
+}

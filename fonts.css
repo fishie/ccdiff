@@ -1,0 +1,76 @@
+@font-face {
+    font-family: 'fallback';
+    src: url('fonts/UnicodeBMPFallbackSIL.woff');
+}
+
+@font-face {
+    font-family: 'taiwan-ministry-of-education-kai-pc';
+    src: url('fonts/CMEXc1.woff');
+}
+.taiwan-kai-pc {
+    font-family: 'taiwan-ministry-of-education-kai-pc', 'fallback';
+}
+
+@font-face {
+    font-family: 'taiwan-ministry-of-education-song-pc';
+    src: url('fonts/CMEXa1.woff');
+}
+.taiwan-song-pc {
+    font-family: 'taiwan-ministry-of-education-song-pc', 'fallback';
+}
+
+@font-face {
+    font-family: 'japan-information-technology-promotion-agency-mincho';
+    src: url('fonts/IPAMincho.woff');
+}
+.japan-ipa-mincho {
+    font-family: 'japan-information-technology-promotion-agency-mincho', 'fallback';
+}
+
+@font-face {
+    font-family: 'japan-information-technology-promotion-agency-gothic';
+    src: url('fonts/IPAGothic.woff');
+}
+.japan-ipa-gothic {
+    font-family: 'japan-information-technology-promotion-agency-gothic', 'fallback';
+}
+
+@font-face {
+    font-family: 'hong-kong-government-ming';
+    src: url('fonts/Ming.woff');
+}
+.hong-kong-ming {
+    font-family: 'hong-kong-government-ming', 'fallback';
+}
+
+@font-face {
+    font-family: 'source-han-sans-cn';
+    src: url('fonts/SourceHanSansCN-Regular.woff');
+}
+.source-han-sans-cn {
+    font-family: 'source-han-sans-cn', 'fallback';
+}
+
+@font-face {
+    font-family: 'naver-nanum-gothic';
+    src: url('fonts/NanumGothic.woff');
+}
+.nanum-gothic {
+    font-family: 'naver-nanum-gothic', 'fallback';
+}
+
+@font-face {
+    font-family: 'arphic-pl-baosong-2gbk';
+    src: url('fonts/ARPLBaosong2GBK-Light.woff');
+}
+.ar-pl-baosong {
+    font-family: 'arphic-pl-baosong-2gbk', 'fallback';
+}
+
+@font-face {
+    font-family: 'seoul-hangang';
+    src: url('fonts/SeoulHangangL.woff');
+}
+.seoul-hangang {
+    font-family: 'seoul-hangang', 'fallback';
+}
