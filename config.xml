@@ -12,4 +12,6 @@
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarStyle" value="default" />
     <preference name="DisallowOverscroll" value="true" />
+	
+	<plugin name="org.apache.cordova.statusbar" spec="0.1.4" source="pgb" />
 </widget>
