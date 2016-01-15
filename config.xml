@@ -10,7 +10,8 @@
     <content src="index.html" />
     <access origin="*" />
     <preference name="StatusBarOverlaysWebView" value="false" />
-    <preference name="StatusBarStyle" value="blacktranslucent" />
+    <preference name="StatusBarStyle" value="default" />
+    <preference name="StatusBarBackgroundColor" value="#FFFFFF" />
     <preference name="DisallowOverscroll" value="true" />
 
     <plugin name="org.apache.cordova.statusbar" spec="0.1.4" source="pgb" />
