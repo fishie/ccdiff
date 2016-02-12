@@ -141,7 +141,7 @@
                 cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
                 
                 document.addEventListener('resume', function() {
-                    cordova.plugins.clipboard.paste(function (text) {
+                    window.plugins.clipboard.paste(function (text) {
                         var scope = angular.element(document.body).scope();
                         if (scope.main.previouslyPasted != text) {
                           scope.main.chars = text;
@@ -168,7 +168,7 @@
         <div id="CharacterList">
             <div class="font" ng-repeat="font in main.fonts">
               <span><span class="country-code">{{font.countryCode}}</span>{{font.shortName}}</span>
-              <div class="big {{font.cssClass}}">{{main.chars}}</div>
+              <div class="big {{font.cssClass}}">{{main.chars[0]}}</div>
             </div>
         </div>
 

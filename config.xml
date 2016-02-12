@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="se.rishie.ccdiff" version="0.1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="se.rishie.ccdiff" version="0.1.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>CCdiff</name>
     <description>
 	An app for comparing Chinese character strokes between different languages and regions.
@@ -10,9 +10,10 @@
     <content src="index.html" />
     <access origin="*" />
     <preference name="StatusBarOverlaysWebView" value="false" />
-    <preference name="StatusBarStyle" value="blackopaque" />
-	<preference name="StatusBarBackgroundColor" value="#FFFFFF" />
+	<preference name="ios-statusbarstyle" value="black-translucent" />
     <preference name="DisallowOverscroll" value="true" />
 	
-	<plugin name="org.apache.cordova.statusbar" spec="0.1.4" source="pgb" />
+	<plugin name="com.phonegap.plugin.statusbar" spec="1.1.0" source="pgb" />
+	<plugin name="com.verso.cordova.clipboard" spec="0.1.0" source="pgb" />
+	<plugin name="com.ionic.keyboard" spec="1.0.3" source="pgb" />
 </widget>
