@@ -167,7 +167,10 @@
         <div id="LoadingDiv">Loading fonts...</div>
         <div id="CharacterList">
             <div class="font" ng-repeat="font in main.fonts">
-              <span><span class="country-code">{{font.countryCode}}</span>{{font.shortName}}</span>
+              <span>
+                <span class="country-code">{{font.countryCode}}</span><!--
+             --><span>{{font.shortName}}</span>
+              </span>
               <div class="big {{font.cssClass}}">{{main.chars[0]}}</div>
             </div>
         </div>
