@@ -10,9 +10,12 @@
     <content src="index.html" />
     <access origin="*" />
     <preference name="StatusBarOverlaysWebView" value="false" />
-    <preference name="StatusBarStyle" value="default" />
-    <preference name="StatusBarBackgroundColor" value="#FFFFFF" />
+    <preference name="ios-statusbarstyle" value="black-translucent" />
     <preference name="DisallowOverscroll" value="true" />
 
-    <plugin name="org.apache.cordova.statusbar" spec="0.1.4" source="pgb" />
+    <preference name="permissions" value="none"/>
+
+    <plugin name="com.phonegap.plugin.statusbar" spec="1.1.0" source="pgb" />
+    <plugin name="com.verso.cordova.clipboard" spec="0.1.0" source="pgb" />
+    <plugin name="com.ionic.keyboard" spec="1.0.3" source="pgb" />
 </widget>
