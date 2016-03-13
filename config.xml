@@ -18,4 +18,6 @@
     <plugin name="com.phonegap.plugin.statusbar" spec="1.1.0" source="pgb" />
     <plugin name="com.verso.cordova.clipboard" spec="0.1.0" source="pgb" />
     <plugin name="com.ionic.keyboard" spec="1.0.3" source="pgb" />
+
+    <icon src="icon.png" />
 </widget>
