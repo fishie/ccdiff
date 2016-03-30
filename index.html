@@ -24,6 +24,16 @@
             });
         </script>
         <script src="js/variants.js"></script>
+        <script src="js/ARPLBaosong2GBK_Light.js"></script>
+        <script src="js/CMEXa1.js"></script>
+        <script src="js/CMEXc1.js"></script>
+        <script src="js/IPAGothic.js"></script>
+        <script src="js/IPAMincho.js"></script>
+        <script src="js/Ming.js"></script>
+        <script src="js/NanumGothic.js"></script>
+        <script src="js/SeoulHangangL.js"></script>
+        <script src="js/SourceHanSansCN_Regular.js"></script>
+        
         <script src="js/angular.min.js"></script>
         <script>
             angular.module('han', []);
@@ -38,47 +48,56 @@
                     {
                         countryCode: 'TW',
                         shortName: 'Kai',
-                        cssClass: 'taiwan-kai-pc'
+                        cssClass: 'taiwan-kai-pc',
+                        glyphDict: CMEXc1_glyphdict
                     },
                     {
                         countryCode: 'TW',
                         shortName: 'Song',
-                        cssClass: 'taiwan-song-pc'
+                        cssClass: 'taiwan-song-pc',
+                        glyphDict: CMEXa1_glyphdict
                     },
                     {
                         countryCode: 'JP',
                         shortName: 'Mincho',
-                        cssClass: 'japan-ipa-mincho'
+                        cssClass: 'japan-ipa-mincho',
+                        glyphDict: IPAMincho_glyphdict
                     },
                     {
                         countryCode: 'JP',
                         shortName: 'Gothic',
-                        cssClass: 'japan-ipa-gothic'
+                        cssClass: 'japan-ipa-gothic',
+                        glyphDict: IPAGothic_glyphdict
                     },
                     {
                         countryCode: 'HK',
                         shortName: 'Ming',
-                        cssClass: 'hong-kong-ming'
+                        cssClass: 'hong-kong-ming',
+                        glyphDict: Ming_glyphdict
                     },
                     {
                         countryCode: 'CN',
                         shortName: 'Sans',
-                        cssClass: 'source-han-sans-cn'
+                        cssClass: 'source-han-sans-cn',
+                        glyphDict: SourceHanSansCN_Regular_glyphdict
                     },
                     {
                         countryCode: 'CN',
                         shortName: 'Song',
-                        cssClass: 'ar-pl-baosong'
+                        cssClass: 'ar-pl-baosong',
+                        glyphDict: ARPLBaosong2GBK_Light_glyphdict
                     },
                     {
                         countryCode: 'KR',
                         shortName: 'Gothic',
-                        cssClass: 'nanum-gothic'
+                        cssClass: 'nanum-gothic',
+                        glyphDict: NanumGothic_glyphdict
                     },
                     {
                         countryCode: 'KR',
                         shortName: 'Seoul',
-                        cssClass: 'seoul-hangang'
+                        cssClass: 'seoul-hangang',
+                        glyphDict: SeoulHangangL_glyphdict
                     }
                 ];
                 
@@ -171,7 +190,9 @@
                 <span class="country-code">{{font.countryCode}}</span><!--
              --><span>{{font.shortName}}</span>
               </span>
-              <div class="big {{font.cssClass}}">{{main.chars[0]}}</div>
+              <div class="big {{font.cssClass}}" ng-if="font.glyphDict.hasOwnProperty(main.chars.charCodeAt(0))">
+                {{main.chars[0]}}
+              </div>
             </div>
         </div>
 
