@@ -2,6 +2,7 @@
 <html ng-app="han">
     <head>
         <meta charset="utf-8">
+        <meta http-equiv="Content-Security-Policy"/>
         <title>Kanji Hanzi Hanja</title>
         <link rel="stylesheet" type="text/css" href="start.css">
         <link rel="stylesheet" type="text/css" href="fonts.css">
@@ -160,7 +161,7 @@
                 cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
                 
                 document.addEventListener('resume', function() {
-                    window.plugins.clipboard.paste(function (text) {
+                    cordova.plugins.clipboard.paste(function (text) {
                         var scope = angular.element(document.body).scope();
                         if (scope.main.previouslyPasted != text) {
                           scope.main.chars = text;
