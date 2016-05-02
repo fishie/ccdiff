@@ -73,6 +73,8 @@ input {
 .unicode-code-input {
     display: inline;
     border: none;
+    font-family: monospace;
+    text-align: center;
 }
 
 #CharacterList {
