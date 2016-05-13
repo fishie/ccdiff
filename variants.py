@@ -31,4 +31,3 @@ for from_codepoint in d:
     character_string += ','.join(map(str, d[from_codepoint])) + ']'
     entries.append(character_string)
 print('{' + ','.join(entries) + '}')
-
