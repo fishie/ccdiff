@@ -5,8 +5,8 @@
         <meta http-equiv="Content-Security-Policy"/>
         <title>Kanji Hanzi Hanja</title>
         <link rel="icon" href="../icon.png">
-        <link rel="stylesheet" type="text/css" href="index.css">
-        <link rel="stylesheet" type="text/css" href="fonts.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="css/fonts.css">
         <script src="js/webfont.js"></script>
         <script>
             WebFont.load({
@@ -43,7 +43,7 @@
 
     <body ng-controller="MainController as main" id="Body">
         <div id="TextBoxHolder">
-            <input type="text" ng-model="main.chars" id="TextBox">
+            <input type="text" ng-model="main.chars" id="TextBox" ng-change="main.appendToHistory(main.chars)">
             <span id="Code">
                 U+<input size="4" class="unicode-code-input" type="text" ng-model="main.chars" code-converter="hexadecimal">
                 (<input class="unicode-code-input" type="text" size="5" ng-model="main.chars" code-converter="decimal">)
@@ -64,9 +64,11 @@
 
         <div id="Variants" ng-show="main.variants.length > 0">
           <h2>Variants:</h2>
-          <span ng-repeat="char in main.toChars()" touchstart-click="main.chars = char">
+          <span ng-repeat="char in main.toChars()" touchstart-click="main.variantClick(char)">
             {{ char }}
           </span>
         </div>
+
+        HISTORY: {{ main.charhistory }}
     </body>
 </html>

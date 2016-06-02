@@ -1,6 +1,8 @@
 angular.module('han', []);
 
 angular.module('han').controller('MainController', function() {
+
+    this.charhistory = [];
     //this.chars = '天漢以叫集写直今所過骨平説說雪没沒社飯絆青靑鯖歩步海';
     this.chars = '鯖';
     this.variantsMap = variantsMap;
@@ -62,9 +64,9 @@ angular.module('han').controller('MainController', function() {
             glyphDict: SeoulHangangL_glyphdict
         }
     ];
-    
+
     var textBox = document.getElementById('TextBox');
-    
+
     document.documentElement.addEventListener('touchstart', function(event) {
         if (event.target != textBox) {
             textBox.blur();
@@ -72,13 +74,13 @@ angular.module('han').controller('MainController', function() {
             cordova.plugins.Keyboard.disableScroll(true);
         }
     });
-    
+
     document.documentElement.addEventListener('touchend', function(event) {
         if (document.activeElement == textBox) {
             cordova.plugins.Keyboard.disableScroll(false);
         }
     });
-    
+
     this.toChars = function() {
         this.variants = this.variantsMap[this.chars.charCodeAt(0)];
         var variantChars = [];
@@ -88,32 +90,50 @@ angular.module('han').controller('MainController', function() {
             }
         }
         return variantChars;
-    }
-    
+    };
 
-    
+    this.appendToHistory = function (chars) {
+
+        trimmed = chars.trim();
+        if (trimmed != "") this.charhistory.push(trimmed[0]);
+
+        d = {};
+        noduplicate = [];
+        for (var i = this.charhistory.length; i--; i >= 0) {
+
+          if (this.charhistory[i] in d) continue;
+          noduplicate.unshift(this.charhistory[i]);
+          d[this.charhistory[i]] = 1;
+        }
+        this.charhistory = noduplicate;
+    };
+
+    this.variantClick = function (char) {
+        this.chars = char;
+        this.appendToHistory(char);
+    };
 });
 
 angular.module('han').directive('codeConverter', function() {
-    
+
     var base = 0;
-    
+
     function getHexadecimal(chars) {
         return chars.charCodeAt(0).toString(16).toUpperCase();
     }
-    
+
     function getDecimal(chars) {
         return chars.charCodeAt(0);
     }
-    
+
     function toCharFromDecimal(code) {
         return String.fromCharCode(code);
     }
-    
+
         function toCharFromHexadecimal(code) {
         return String.fromCharCode(parseInt(code, 16));
     }
-    
+
     return {
         restrict: 'A',
         require: 'ngModel',
@@ -134,18 +154,18 @@ angular.module('han').directive('touchstartClick', function() {
     return function(scope, element, attributes) {
 
         element.on('touchstart', function(event) {
-            scope.$apply(function() { 
-                scope.$eval(attributes.touchstartClick); 
+            scope.$apply(function() {
+                scope.$eval(attributes.touchstartClick);
             });
             event.preventDefault();
         });
-        
+
         element.on('click', function(event) {
-            scope.$apply(function() { 
-                scope.$eval(attributes.touchstartClick); 
+            scope.$apply(function() {
+                scope.$eval(attributes.touchstartClick);
             });
         });
-        
+
         element.on('mousedown', function(event) {
             event.preventDefault(); // Prevent double click select text.
         });
@@ -154,7 +174,7 @@ angular.module('han').directive('touchstartClick', function() {
 
 document.addEventListener('deviceready', function() {
     cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-    
+
     document.addEventListener('resume', function() {
         cordova.plugins.clipboard.paste(function (text) {
             var scope = angular.element(document.body).scope();
