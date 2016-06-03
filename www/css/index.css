@@ -122,6 +122,14 @@ input {
     font-size: 3em;
 }
 
+#History {
+    margin-left: 2em;
+}
+
+#History span {
+    padding: 0 6px;
+}
+
 div.font span {
     display: inline-block;
 }

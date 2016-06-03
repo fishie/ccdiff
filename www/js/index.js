@@ -2,9 +2,10 @@ angular.module('han', []);
 
 angular.module('han').controller('MainController', function() {
 
-    this.charhistory = [];
+
     //this.chars = '天漢以叫集写直今所過骨平説說雪没沒社飯絆青靑鯖歩步海';
     this.chars = '鯖';
+    this.charhistory = [this.chars];
     this.variantsMap = variantsMap;
     this.variants = [];
     this.previouslyPasted = "";
@@ -108,7 +109,7 @@ angular.module('han').controller('MainController', function() {
         this.charhistory = noduplicate;
     };
 
-    this.variantClick = function (char) {
+    this.charClick = function (char) {
         this.chars = char;
         this.appendToHistory(char);
     };
