@@ -50,6 +50,7 @@
                 (<input class="unicode-code-input" type="text" size="5" ng-model="main.chars" code-converter="decimal">)
             </span>
         </div>
+
         <div id="LoadingDiv">Loading fonts...</div>
         <div id="CharacterList">
             <div class="font" ng-repeat="font in main.fonts">
@@ -70,10 +71,10 @@
             </span>
         </div>
 
-        <div id="History">
-            History:
-            <span ng-repeat="char in main.charhistory.slice(-11, -1)" touchstart-click="main.charClick(char)">
-              {{ char }}
+        <div id="History" ng-show="main.charhistory.length > 1">
+            <h2>History:</h2>
+            <span ng-repeat="char in main.charhistory.slice(-10, -1)" touchstart-click="main.charClick(char)">
+                {{ char }}
             </span>
         </div>
 

@@ -50,7 +50,7 @@ input {
 
 #TextBoxHolder {
     text-align: center;
-    width:  90%;
+    width: 90%;
     display: table;
     margin-left: auto;
     margin-right: auto;
@@ -104,12 +104,13 @@ input {
     font-family: monospace;
 }
 
-#Variants h2 {
-    font-size: 20px;
+h2 {
+    font-size: 18px;
     font-family: monospace;
+    font-weight: bold;
     display: inline-block;
     vertical-align: top;
-    line-height: 3em;
+    line-height: 2.5em;
     margin: 0;
 }
 
@@ -118,16 +119,12 @@ input {
     visibility: hidden;
 }
 
-#Variants span {
-    font-size: 3em;
+#Variants span, #History span {
+    font-size: 2.5em;
 }
 
 #History {
     margin-left: 2em;
-}
-
-#History span {
-    padding: 0 6px;
 }
 
 div.font span {
