@@ -93,10 +93,18 @@ angular.module('han').controller('MainController', function() {
         return variantChars;
     };
 
+    function isChineseCharacter(char) {
+        charcode = char.charCodeAt(0);
+        if ((charcode >= 0x3400 && charcode <= 0x9FFF) || (charcode >= 0xF900 && charcode <= 0xFAFF)) {
+            return true;
+        }
+        return false;
+    }
+
     this.appendToHistory = function (chars) {
 
         trimmed = chars.trim();
-        if (trimmed != "" && trimmed.charCodeAt(0) >= 0x3400 && trimmed.charCodeAt(0) <= 0x9FFF) {
+        if ((trimmed != "") && isChineseCharacter(trimmed[0])) {
             this.charhistory.push(trimmed[0]);
         }
 
