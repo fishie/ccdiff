@@ -46,8 +46,20 @@
         <div id="TextBoxHolder">
             <input type="text" ng-model="main.chars" id="TextBox" ng-change="main.appendToHistory(main.chars)">
             <span id="Code">
-                U+<input size="4" class="unicode-code-input" type="text" ng-model="main.chars" code-converter="hexadecimal">
-                (<input class="unicode-code-input" type="text" size="5" ng-model="main.chars" code-converter="decimal">)
+                U+<input type="text"
+                         class="unicode-code-input"
+                         size="4"
+                         ng-model="main.chars"
+                         ng-change="main.appendToHistory(main.chars)"
+                         code-converter="hexadecimal"
+                  >
+                (<input type="text"
+                        class="unicode-code-input"
+                        size="5"
+                        ng-model="main.chars"
+                        ng-change="main.appendToHistory(main.chars)"
+                        code-converter="decimal"
+                 >)
             </span>
         </div>
 

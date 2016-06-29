@@ -96,7 +96,9 @@ angular.module('han').controller('MainController', function() {
     this.appendToHistory = function (chars) {
 
         trimmed = chars.trim();
-        if (trimmed != "") this.charhistory.push(trimmed[0]);
+        if (trimmed != "" && trimmed.charCodeAt(0) >= 0x3400 && trimmed.charCodeAt(0) <= 0x9FFF) {
+            this.charhistory.push(trimmed[0]);
+        }
 
         d = {};
         noduplicate = [];
