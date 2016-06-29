@@ -110,7 +110,7 @@ h2 {
     font-family: monospace;
     font-weight: bold;
     display: inline-block;
-    vertical-align: top;
+    vertical-align: bottom;
     line-height: 2.5em;
     margin: 0;
 }
@@ -118,10 +118,25 @@ h2 {
 #Variants {
     margin-left: 2em;
     visibility: hidden;
+    margin-bottom: 8px;
 }
 
-#Variants span, #History span {
-    font-size: 2.5em;
+#Variants > span, #History > span {
+    display: inline-block;
+    margin-right: 1em;
+}
+
+#Variants span.char, #History span.char {
+    font-size: 40px;
+    line-height: 42px;
+}
+
+.mini-code {
+    font-size: 11px;
+    line-height: 13px;
+    font-family: monospace;
+    display: block;
+    text-align: center;
 }
 
 #History {

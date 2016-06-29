@@ -82,7 +82,7 @@ angular.module('han').controller('MainController', function() {
         }
     });
 
-    this.toChars = function() {
+    this.getVariants = function() {
         this.variants = this.variantsMap[this.chars.charCodeAt(0)];
         var variantChars = [];
         if (this.variants) {
