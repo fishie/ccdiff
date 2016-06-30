@@ -8,6 +8,7 @@ def nnprint(text):
 
 d = collections.defaultdict(set)
 
+# Create a bidirectional graph
 for line in open('Unihan_Variants.txt'):
     if line[0] == '#' or line.strip() == '': continue
     from_codepoint, variant_style, tos = line.split(maxsplit=2)
@@ -15,19 +16,34 @@ for line in open('Unihan_Variants.txt'):
     if variant_style in ['kTraditionalVariant', 'kSimplifiedVariant', 'kZVariant']:
         for to in tos.split():
             to_codepoint = to.split('<')[0].strip()
-            d[get_charcode(from_codepoint)].add(get_charcode(to_codepoint))
+            from_charcode = get_charcode(from_codepoint)
+            to_charcode = get_charcode(to_codepoint)
+            d[from_charcode].add(to_charcode)
+            d[to_charcode].add(from_charcode)
 
-for from_codepoint in list(d.keys()):
-    for to_codepoint in d[from_codepoint]:
-        to_set = set(d[to_codepoint])
-        if from_codepoint in to_set:
-            to_set.remove(from_codepoint)
-        d[from_codepoint] = d[from_codepoint].union(to_set)
-        d[to_codepoint].add(from_codepoint)
+# Find connected subgraphs using BFSs
+visited = set()
+for codepoint in d.keys():
+    if codepoint in visited:
+        continue
+
+    nodes = {codepoint}
+    queue = [codepoint]
+    while len(queue) > 0:
+        current = queue.pop()
+        visited.add(current)
+        nodes.add(current)
+        for adjacent in d[current]:
+            if adjacent not in nodes:
+                queue.insert(0, adjacent)
+    for node in nodes:
+        d[node] = nodes - {node}
 
 entries = []
-for from_codepoint in d:
+for from_codepoint in sorted(d.keys()):
     character_string = str(from_codepoint) + ':['
     character_string += ','.join(map(str, d[from_codepoint])) + ']'
     entries.append(character_string)
-print('{' + ','.join(entries) + '}')
+js = 'var variantsMap = {' + ','.join(entries) + '};'
+open('www/js/variants.js', 'w').write(js)
+print(js)
