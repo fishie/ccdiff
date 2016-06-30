@@ -80,8 +80,25 @@ input {
 
 #CharacterList {
     margin-top: 2px;
+    margin-right: auto;
+    margin-left: auto;
     text-align: center;
     visibility: hidden;
+}
+
+br {
+    display: none;
+}
+
+@media only screen and (min-width: 380px) and (max-width: 500px) {
+    #CharacterList > br:nth-child(3n+3) {
+        display: block;
+    }
+}
+@media only screen and (min-width: 500px) and (max-width: 1000px) {
+    #CharacterList > br:nth-child(5n+5) {
+        display: block;
+    }
 }
 
 #Code {
@@ -109,14 +126,16 @@ h2 {
     font-size: 18px;
     font-family: monospace;
     font-weight: bold;
-    display: inline-block;
     vertical-align: bottom;
-    line-height: 2.5em;
     margin: 0;
 }
 
+#Variants, #History {
+    width: 90%;
+    margin: 0 auto;
+}
+
 #Variants {
-    margin-left: 2em;
     visibility: hidden;
     margin-bottom: 8px;
 }
@@ -137,10 +156,6 @@ h2 {
     font-family: monospace;
     display: block;
     text-align: center;
-}
-
-#History {
-    margin-left: 2em;
 }
 
 div.font span {
