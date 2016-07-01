@@ -7,18 +7,26 @@
         <link rel="icon" href="../icon.png">
         <title>Fonts</title>
         <style type="text/css">
+            body {
+                margin: 0 5%;
+            }
             .fineprint {
                 font-family: sans-serif;
                 font-size: 12px;
                 max-width: 600px;
                 padding: 0 1em 1em 1em;
                 white-space: pre-line;
+                overflow-wrap: break-word;
             }
             .italic {
                 font-style: italic;
             }
             .bold {
                 font-weight: bold;
+            }
+
+            #BottomFiller {
+                height: 40px;
             }
         </style>
     </head>
@@ -240,5 +248,7 @@
         <a href="http://www.unicode.org/charts/unihan.html">
           http://www.unicode.org/charts/unihan.html
         </a>
+
+        <div id="BottomFiller"></div>
     </body>
 </html>

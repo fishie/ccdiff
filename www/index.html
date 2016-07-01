@@ -100,8 +100,8 @@
         <object id="About" data="about.html" ng-show="main.showAbout"></object>
 
         <div id="BottomBar">
-            <span touchstart-click="main.toggleAbout()">
-                About
+            <span id="AboutButton" touchstart-click="main.toggleAbout()">
+                {{ main.showAbout ? "Back" : "About" }}
             </span>
             <span id="url">
                 <a href="http://rishie.se/ccdiff">http://rishie.se/ccdiff</a>
