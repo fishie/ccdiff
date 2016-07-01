@@ -50,7 +50,7 @@ input {
 
 #TextBoxHolder {
     text-align: center;
-    width: 100%;
+    width: 90%;
     display: table;
     margin-left: auto;
     margin-right: auto;
@@ -70,16 +70,22 @@ input {
     box-sizing: border-box;
 }
 
+.filler {
+    display: table-cell;
+    width: 5%;
+    text-align: right;
+}
+
 .more-info {
+    display: table-cell;
     border: 2px solid #4e4e4e;
     border-radius: 50%;
-    padding: 2px 9px;
-    margin-left: 10px;
-    margin-right: 10px;
+    padding: 0px 8px;
     font-family: serif;
     font-weight: bold;
     font-size: 18px;
-    float: right;
+    margin-right: 10px;
+    vertical-align: text-bottom;
 }
 
 .unicode-code-input {
@@ -180,6 +186,27 @@ div.font > span {
 
 div.font span span:nth-of-type(2) {
     vertical-align: bottom;
+}
+
+
+#BottomFiller {
+    height: 25px;
+}
+
+#BottomBar {
+    position: fixed;
+    width: 90%;
+    font-size: 11px;
+    bottom: 0;
+    left: 5%;
+    border-top: 1px solid #888888;
+    padding-top: 2px;
+    height: 20px;
+    background-color: white;
+}
+
+#url {
+    float: right;
 }
 
 html.wf-active #CharacterList, html.wf-active #Variants {
