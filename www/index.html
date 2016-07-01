@@ -43,61 +43,65 @@
     </head>
 
     <body ng-controller="MainController as main" id="Body">
-        <div id="TextBoxHolder">
-            <input type="text" ng-model="main.chars" id="TextBox" ng-change="main.appendToHistory(main.chars)">
-            <span id="Code">
-                U+<input type="text"
-                         class="unicode-code-input"
-                         size="4"
-                         ng-model="main.chars"
-                         ng-change="main.appendToHistory(main.chars)"
-                         code-converter="hexadecimal"
-                  >
-                (<input type="text"
-                        class="unicode-code-input"
-                        size="5"
-                        ng-model="main.chars"
-                        ng-change="main.appendToHistory(main.chars)"
-                        code-converter="decimal"
-                 >)
-            </span>
-        </div>
-
-        <div id="LoadingDiv">Loading fonts...</div>
-        <div id="CharacterList">
-            <div class="font" ng-repeat-start="font in main.fonts">
-              <span>
-                <span class="country-code">{{font.countryCode}}</span><!--
-             --><span>{{font.shortName}}</span>
-              </span>
-              <div class="big {{font.cssClass}}" ng-if="font.glyphDict.hasOwnProperty(main.chars.charCodeAt(0))">
-                {{main.chars[0]}}
-              </div>
+        <div id="Main" ng-hide="main.showAbout">
+            <div id="TextBoxHolder">
+                <input type="text" ng-model="main.chars" id="TextBox" ng-change="main.appendToHistory(main.chars)">
+                <span id="Code">
+                    U+<input type="text"
+                             class="unicode-code-input"
+                             size="4"
+                             ng-model="main.chars"
+                             ng-change="main.appendToHistory(main.chars)"
+                             code-converter="hexadecimal"
+                      >
+                    (<input type="text"
+                            class="unicode-code-input"
+                            size="5"
+                            ng-model="main.chars"
+                            ng-change="main.appendToHistory(main.chars)"
+                            code-converter="decimal"
+                     >)
+                </span>
             </div>
-            <br ng-repeat-end>
+
+            <div id="LoadingDiv">Loading fonts...</div>
+            <div id="CharacterList">
+                <div class="font" ng-repeat-start="font in main.fonts">
+                  <span>
+                    <span class="country-code">{{font.countryCode}}</span><!--
+                 --><span>{{font.shortName}}</span>
+                  </span>
+                  <div class="big {{font.cssClass}}" ng-if="font.glyphDict.hasOwnProperty(main.chars.charCodeAt(0))">
+                    {{main.chars[0]}}
+                  </div>
+                </div>
+                <br ng-repeat-end>
+            </div>
+
+            <div id="Variants" ng-show="main.variants.length > 0">
+                <h2>Variants</h2>
+                <span ng-repeat="char in main.getVariants()" touchstart-click="main.charClick(char)">
+                    <span class="mini-code">{{ char.charCodeAt(0).toString(16).toUpperCase() }}</span>
+                    <span class="char">{{ char }}</span>
+                </span>
+            </div>
+
+            <div id="History" ng-show="main.charhistory.length > 1">
+                <h2>History</h2>
+                <span ng-repeat="char in main.charhistory.slice(-10, -1)" touchstart-click="main.charClick(char)">
+                    <span class="mini-code">{{ char.charCodeAt(0).toString(16).toUpperCase() }}</span>
+                    <span class="char">{{ char }}</span>
+                </span>
+            </div>
+
+            <div id="BottomFiller"></div>
         </div>
 
-        <div id="Variants" ng-show="main.variants.length > 0">
-            <h2>Variants</h2>
-            <span ng-repeat="char in main.getVariants()" touchstart-click="main.charClick(char)">
-                <span class="mini-code">{{ char.charCodeAt(0).toString(16).toUpperCase() }}</span>
-                <span class="char">{{ char }}</span>
-            </span>
-        </div>
-
-        <div id="History" ng-show="main.charhistory.length > 1">
-            <h2>History</h2>
-            <span ng-repeat="char in main.charhistory.slice(-10, -1)" touchstart-click="main.charClick(char)">
-                <span class="mini-code">{{ char.charCodeAt(0).toString(16).toUpperCase() }}</span>
-                <span class="char">{{ char }}</span>
-            </span>
-        </div>
-
-        <div id="BottomFiller"></div>
+        <object id="About" data="about.html" ng-show="main.showAbout"></object>
 
         <div id="BottomBar">
-            <span>
-                <a href="about.html">About</a>
+            <span touchstart-click="main.toggleAbout()">
+                About
             </span>
             <span id="url">
                 <a href="http://rishie.se/ccdiff">http://rishie.se/ccdiff</a>

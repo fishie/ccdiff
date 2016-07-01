@@ -188,7 +188,6 @@ div.font span span:nth-of-type(2) {
     vertical-align: bottom;
 }
 
-
 #BottomFiller {
     height: 25px;
 }
@@ -207,6 +206,12 @@ div.font span span:nth-of-type(2) {
 
 #url {
     float: right;
+}
+
+#About {
+    height: 100%;
+    width: 100%;
+    position: absolute;
 }
 
 html.wf-active #CharacterList, html.wf-active #Variants {
