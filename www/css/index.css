@@ -50,7 +50,7 @@ input {
 
 #TextBoxHolder {
     text-align: center;
-    width: 90%;
+    width: 100%;
     display: table;
     margin-left: auto;
     margin-right: auto;
@@ -68,6 +68,18 @@ input {
     border-radius: 0px;
     -webkit-appearance: none;
     box-sizing: border-box;
+}
+
+.more-info {
+    border: 2px solid #4e4e4e;
+    border-radius: 50%;
+    padding: 2px 9px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-family: serif;
+    font-weight: bold;
+    font-size: 18px;
+    float: right;
 }
 
 .unicode-code-input {
