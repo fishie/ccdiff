@@ -142,7 +142,6 @@ angular.module('han').controller('MainController', function() {
         }
 
         var scope = angular.element(document.getElementById("Body")).scope();
-        scope.main.showAbout = showAbout;
         scope.$evalAsync(function(scope) {
             scope.main.showAbout = showAbout;
         });
