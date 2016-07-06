@@ -209,7 +209,7 @@ div.font span span:nth-of-type(2) {
 }
 
 #About {
-    height: 100%;
+    height: calc(100% - 23px);
     width: 100%;
     position: absolute;
 }
