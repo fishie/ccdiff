@@ -28,13 +28,25 @@
             #BottomFiller {
                 height: 40px;
             }
+
+            a {
+                text-decoration: underline;
+                cursor: auto;
+                color: rgb(0, 0, 238);
+            }
         </style>
+        <script>
+            function openExternal(url) {
+                if (parent.cordova) parent.cordova.InAppBrowser.open(url, '_system');
+                else parent.location = url;
+            }
+        </script>
     </head>
     <body>
         <div id="FontList">
             <h2>Fonts</h2>
             <div>
-                <a href="http://english.moe.gov.tw/ct.asp?xItem=567&ctNode=424&mp=1">
+                <a onclick="openExternal('http://english.moe.gov.tw/ct.asp?xItem=567&ctNode=424&mp=1')">
                     Ministry of Education - Republic of China (Taiwan)</a>
                 <span class="bold">Kai</span>
                 <span class="italic">(Traditional Chinese)</span>
@@ -47,7 +59,7 @@
             </div>
 
             <div>
-                <a href="http://english.moe.gov.tw/ct.asp?xItem=567&ctNode=424&mp=1">
+                <a onclick="openExternal('http://english.moe.gov.tw/ct.asp?xItem=567&ctNode=424&mp=1')">
                     Ministry of Education - Republic of China (Taiwan)</a>
                 <span class="bold">Song</span>
                 <span class="italic">(Traditional Chinese)</span>
@@ -60,13 +72,13 @@
             </div>
 
             <div>
-                <a href="http://ipafont.ipa.go.jp/">
+                <a onclick="openExternal('http://ipafont.ipa.go.jp/')">
                     Information-technology Promotion Agency, Japan</a>
                 <span class="bold">Mincho</span>
                 <span class="italic">(Japanese)</span>
 
                 <div class="fineprint">
-                    "IPAex Font" series (Ver.001 and upper) and "IPA Font" series(Ver.003 and upper) is able to use with the agreement to "<a href="http://opensource.org/licenses/IPA">IPA Open Font License</a>", which is consistent with international business practice and endorsed by Open Source Initiative (OSI) as confirmed license with Open Source Definition (OSD).
+                    "IPAex Font" series (Ver.001 and upper) and "IPA Font" series(Ver.003 and upper) is able to use with the agreement to "<a onclick="openExternal('http://opensource.org/licenses/IPA')">IPA Open Font License</a>", which is consistent with international business practice and endorsed by Open Source Initiative (OSI) as confirmed license with Open Source Definition (OSD).
 
                      「IPAexフォント(Ver.001以降)」および「IPAフォント(Ver.003以降)」には、オープンソースライセンスとしての国際的な慣習にも整合性を持つライセンス"IPAフォントライセンス"を適用します。同ライセンスは2009年4月1日に、Open Source Initiative（OSI）による「オープンソース定義（OSD）」に準拠したものとしてOSIより認定を受けております。
                </div>
@@ -74,20 +86,20 @@
 
 
             <div>
-                <a href="http://ipafont.ipa.go.jp/">
+                <a onclick="openExternal('http://ipafont.ipa.go.jp/')">
                     Information-technology Promotion Agency, Japan</a>
                 <span class="bold">Gothic</span>
                 <span class="italic">(Japanese)</span>
 
                 <div class="fineprint">
-                "IPAex Font" series (Ver.001 and upper) and "IPA Font" series(Ver.003 and upper) is able to use with the agreement to "<a href="http://opensource.org/licenses/IPA">IPA Open Font License</a>", which is consistent with international business practice and endorsed by Open Source Initiative (OSI) as confirmed license with Open Source Definition (OSD).
+                "IPAex Font" series (Ver.001 and upper) and "IPA Font" series(Ver.003 and upper) is able to use with the agreement to "<a onclick="openExternal('http://opensource.org/licenses/IPA')">IPA Open Font License</a>", which is consistent with international business practice and endorsed by Open Source Initiative (OSI) as confirmed license with Open Source Definition (OSD).
 
                「IPAexフォント(Ver.001以降)」および「IPAフォント(Ver.003以降)」には、オープンソースライセンスとしての国際的な慣習にも整合性を持つライセンス"IPAフォントライセンス"を適用します。同ライセンスは2009年4月1日に、Open Source Initiative（OSI）による「オープンソース定義（OSD）」に準拠したものとしてOSIより認定を受けております。
                </div>
             </div>
 
             <div>
-                <a href="http://www.gov.hk/en/about/helpdesk/softwarerequirement/hkscs.htm">
+                <a onclick="openExternal('http://www.gov.hk/en/about/helpdesk/softwarerequirement/hkscs.htm')">
                     Hong Kong Special Administrative Region Government</a>
                 <span class="bold">Ming</span>
                 <span class="italic">(Traditional Chinese)</span>
@@ -99,7 +111,7 @@
 
                     2. By using the Software and Document, you irrevocably agree that the HKSARG may from time to time vary this Terms of Use without further notice to you and you also irrevocably agree to be bound by the most updated version of the Terms of Use.
 
-                    3. You have the sole responsibility of obtaining the most updated version of the Terms of Use which is available in the "Digital 21" Web site (http://www.ogcio.gov.hk/en/business/tech_promotion/ccli/terms/terms.htm).
+                    3. You have the sole responsibility of obtaining the most updated version of the Terms of Use which is available in the "Digital 21" Web site (<a onclick="openExternal('http://www.ogcio.gov.hk/en/business/tech_promotion/ccli/terms/terms.htm')">http://www.ogcio.gov.hk/en/business/tech_promotion/ccli/terms/terms.htm</a>").
 
                     4. By accepting this Terms of Use, HKSARG shall grant you a non-exclusive license to use the Software and Document for any purpose, subject to clause 5 below.
 
@@ -126,12 +138,12 @@
                     15. In addition to the licence granted in Clause 4, HKSARG hereby grants you a non-exclusive limited licence to reproduce and distribute the Software and Document with the following conditions:
                     (i)   not for financial gain unless it is incidental;
                     (ii)  reproduction and distribution of the Software and Document in complete and unmodified form; and
-                    (iii) when you distribute the Software and Document, you agree to attach the Terms of Use and a statement that the latest version of the Terms of Use is available from the "Office of the Government Chief Information Officer" Web site (http://www.ogcio.gov.hk/en/business/tech_promotion/ccli/terms/terms.htm).
+                    (iii) when you distribute the Software and Document, you agree to attach the Terms of Use and a statement that the latest version of the Terms of Use is available from the "Office of the Government Chief Information Officer" Web site (<a onclick="openExternal('http://www.ogcio.gov.hk/en/business/tech_promotion/ccli/terms/terms.htm')">http://www.ogcio.gov.hk/en/business/tech_promotion/ccli/terms/terms.htm</a>).
                 </div>
             </div>
 
             <div>
-                <a href="https://github.com/adobe-fonts/source-han-sans#readme">
+                <a onclick="openExternal('https://github.com/adobe-fonts/source-han-sans#readme')">
                     Source Han Sans</a>
                 <span class="bold">CN Regular</span>
                 <span class="italic">(Simplified Chinese)</span>
@@ -139,12 +151,12 @@
                 <div class="fineprint">
                     Apache License
                     Version 2.0, January 2004
-                    <a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a>
+                    <a onclick="openExternal('http://www.apache.org/licenses/LICENSE-2.0')">http://www.apache.org/licenses/LICENSE-2.0</a>
                 </div>
             </div>
 
             <div>
-                <a href="http://www.arphic.com/tw/news/2010/20100420.html">Arphic</a>
+                <a onclick="openExternal('http://www.arphic.com/tw/news/2010/20100420.html')">Arphic</a>
                 <span class="bold">AR PL BaoSong2GBK</span>
                 <span class="italic">(Simplified Chinese)</span>
 
@@ -212,7 +224,7 @@
              </div>
 
              <div>
-                <a href="http://www.seoul.go.kr/v2012/seoul/symbol/font.html">Seoul Metropolitan Government</a>
+                <a onclick="openExternal('http://www.seoul.go.kr/v2012/seoul/symbol/font.html')">Seoul Metropolitan Government</a>
                 <span class="bold">Hangang</span>
                 <span class="italic">(Korean)</span>
 
@@ -229,15 +241,15 @@
             </div>
 
              <div>
-                <a href="http://www.nhncorp.com">NHN Corporation</a>
+                <a onclick="openExternal('http://www.nhncorp.com')">NHN Corporation</a>
                 <span class="bold">Nanum Gothic</span>
                 <span class="italic">(Korean)</span>
 
                 <div class="fineprint">
-                    Copyright (c) 2010, NHN Corporation (<a href="http://www.nhncorp.com">http://www.nhncorp.com</a>),
+                    Copyright (c) 2010, NHN Corporation (<a onclick="openExternal('http://www.nhncorp.com')">http://www.nhncorp.com</a>),
                     with Reserved Font Name Nanum, Naver Nanum, NanumGothic, Naver NanumGothic, NanumMyeongjo, Naver NanumMyeongjo, NanumBrush, Naver NanumBrush, NanumPen, Naver NanumPen.
                     This Font Software is licensed under the SIL Open Font License, Version 1.1.
-                    This license is copied below, and is also available with a FAQ at: <a href="http://scripts.sil.org/OFL">http://scripts.sil.org/OFL</a>
+                    This license is copied below, and is also available with a FAQ at: <a onclick="openExternal('http://scripts.sil.org/OFL')">http://scripts.sil.org/OFL</a>
                     SIL OPEN FONT LICENSE
                     Version 1.1 - 26 February 2007
                 </div>
@@ -245,7 +257,7 @@
         </div>
 
         <h2>Unihan Database</h2>
-        <a href="http://www.unicode.org/charts/unihan.html">
+        <a onclick="openExternal('http://www.unicode.org/charts/unihan.html">
           http://www.unicode.org/charts/unihan.html
         </a>
 

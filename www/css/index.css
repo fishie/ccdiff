@@ -48,6 +48,12 @@ input {
     display: block;
 }
 
+a {
+    text-decoration: underline;
+    cursor: auto;
+    color: rgb(0, 0, 238);
+}
+
 #TextBoxHolder {
     text-align: center;
     width: 90%;

@@ -126,6 +126,31 @@ angular.module('han').controller('MainController', function() {
 
     this.toggleAbout = function() {
         this.showAbout ^= true;
+
+        if (this.showAbout) {
+            window.history.pushState({showAbout: true}, "", "index.html");
+        } else {
+            window.history.back();
+        }
+
+    };
+
+    window.onpopstate = function(event) {
+        var showAbout = false;
+        if (event.state) {
+            showAbout = event.state.showAbout;
+        }
+
+        var scope = angular.element(document.getElementById("Body")).scope();
+        scope.main.showAbout = showAbout;
+        scope.$evalAsync(function(scope) {
+            scope.main.showAbout = showAbout;
+        });
+    }
+
+    this.openExternal = function(url) {
+        if (window.cordova) cordova.InAppBrowser.open(url, '_system');
+        else window.location = url;
     };
 });
 

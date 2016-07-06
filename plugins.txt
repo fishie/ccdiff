@@ -1,2 +1,3 @@
 cordova-plugin-statusbar
 https://github.com/Visigo/CordovaClipboard
+cordova-plugin-inappbrowser
