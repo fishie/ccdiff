@@ -149,7 +149,7 @@ angular.module('han').controller('MainController', function() {
 
     this.openExternal = function(url) {
         if (window.cordova) cordova.InAppBrowser.open(url, '_system');
-        else window.location = url;
+        else window.open(url);
     };
 });
 

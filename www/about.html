@@ -38,7 +38,7 @@
         <script>
             function openExternal(url) {
                 if (parent.cordova) parent.cordova.InAppBrowser.open(url, '_system');
-                else parent.location = url;
+                else window.open(url);
             }
         </script>
     </head>
