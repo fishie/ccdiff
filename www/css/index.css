@@ -50,7 +50,7 @@ input {
 
 a {
     text-decoration: underline;
-    cursor: auto;
+    cursor: pointer;
     color: rgb(0, 0, 238);
 }
 
@@ -218,6 +218,14 @@ div.font span span:nth-of-type(2) {
     height: calc(100% - 23px);
     width: 100%;
     position: absolute;
+}
+
+#AboutButton {
+    cursor: pointer;
+}
+
+#AboutButton:hover {
+    text-decoration: underline;
 }
 
 html.wf-active #CharacterList, html.wf-active #Variants {
