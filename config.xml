@@ -10,8 +10,6 @@
     <content src="index.html" />
     <access origin="*" />
     <preference name="StatusBarOverlaysWebView" value="false" />
-    <preference name="ios-statusbarstyle" value="black-translucent" />
-    <preference name="DisallowOverscroll" value="true" />
 
     <preference name="permissions" value="none"/>
 

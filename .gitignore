@@ -3,3 +3,4 @@
 plugins/
 platforms/
 www/js/angular.js
+.DS_Store

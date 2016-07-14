@@ -74,6 +74,7 @@ input {
     display: inline;
     border: none;
     font-family: monospace;
+    font-size: 14px;
     text-align: center;
 }
 
