@@ -167,6 +167,7 @@ h2 {
 #Variants > span, #History > span {
     display: inline-block;
     margin-right: 1em;
+    cursor: pointer;
 }
 
 #Variants span.char, #History span.char {
