@@ -2,7 +2,7 @@
 
 ## Installation
 
-You will need to install git lfs before cloning this repository, see [github.com/git-lfs/git-lfs/wiki/Installation](https://github.com/git-lfs/git-lfs/wiki/Installation) for instructions.
+You will need to install Git LFS before cloning this repository, see [github.com/git-lfs/git-lfs/wiki/Installation](https://github.com/git-lfs/git-lfs/wiki/Installation) for instructions.
 
 ## License
 
