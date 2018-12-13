@@ -1,15 +1,13 @@
-Copyright (C) 2016 Rishie Sharma
+# README
 
-This program is free software; you can redistribute it and/or
-modify it under the terms of the GNU General Public License
-as published by the Free Software Foundation; either version 2
-of the License, or (at your option) any later version.
+## Installation
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
+You will need to install git lfs before cloning this repository, see [github.com/git-lfs/git-lfs/wiki/Installation](https://github.com/git-lfs/git-lfs/wiki/Installation) for instructions.
 
-You should have received a copy of the GNU General Public License
-along with this program; if not, write to the Free Software
-Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+## License
+
+This Source Code Form is subject to the terms of the Mozilla Public
+License, v. 2.0. Check out the LICENSE file or [http://mozilla.org/MPL/2.0/](http://mozilla.org/MPL/2.0/)
+for a full copy of the MPL.
+
+Copyright © 2018 Rishie Sharma
