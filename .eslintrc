@@ -1,0 +1,11 @@
+{
+    "env": {
+        "es6": true
+    },
+    "rules": {
+        "no-var": "error",
+        "arrow-parens": "error",
+        "no-empty-function": "error",
+        "prefer-arrow-callback": "error"
+    }
+}
