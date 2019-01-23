@@ -6,6 +6,7 @@
         "no-var": "error",
         "arrow-parens": "error",
         "no-empty-function": "error",
-        "prefer-arrow-callback": "error"
+        "prefer-arrow-callback": "error",
+        "eqeqeq": "error"
     }
 }

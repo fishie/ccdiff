@@ -21,10 +21,10 @@ angular.module('han').directive('codeConverter', () => {
         require: 'ngModel',
         link: (scope, element, attributes, ngModel) => {
 
-            if (attributes.codeConverter == 'decimal') {
+            if (attributes.codeConverter === 'decimal') {
                 ngModel.$parsers.push(toCharFromDecimal);
                 ngModel.$formatters.push(getDecimal);
-            } else if (attributes.codeConverter == 'hexadecimal') {
+            } else if (attributes.codeConverter === 'hexadecimal') {
                 ngModel.$parsers.push(toCharFromHexadecimal);
                 ngModel.$formatters.push(getHexadecimal);
             }

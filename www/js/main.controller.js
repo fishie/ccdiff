@@ -67,15 +67,15 @@ angular.module('han').controller('MainController', function() {
     const textBox = document.getElementById('TextBox');
 
     document.documentElement.addEventListener('touchstart', (event) => {
-        if (event.target != textBox) {
+        if (event.target !== textBox) {
             textBox.blur();
-        } else if (document.activeElement == textBox) {
+        } else if (document.activeElement === textBox) {
             cordova.plugins.Keyboard.disableScroll(true);
         }
     });
 
     document.documentElement.addEventListener('touchend', (event) => {
-        if (document.activeElement == textBox) {
+        if (document.activeElement === textBox) {
             cordova.plugins.Keyboard.disableScroll(false);
         }
     });
@@ -102,7 +102,7 @@ angular.module('han').controller('MainController', function() {
     this.appendToHistory = function (chars) {
 
         trimmed = chars.trim();
-        if ((trimmed != "") && isChineseCharacter(trimmed[0])) {
+        if ((trimmed !== "") && isChineseCharacter(trimmed[0])) {
             this.charhistory.push(trimmed[0]);
         }
 

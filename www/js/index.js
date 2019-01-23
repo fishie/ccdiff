@@ -6,7 +6,7 @@ document.addEventListener('deviceready', () => {
     document.addEventListener('resume', () => {
         cordova.plugins.clipboard.paste((text) => {
             const scope = angular.element(document.body).scope();
-            if (scope.main.previouslyPasted != text) {
+            if (scope.main.previouslyPasted !== text) {
               scope.main.chars = text;
               scope.main.previouslyPasted = text;
               scope.$apply();
