@@ -1,0 +1,20 @@
+{
+    "name": "se.rishie.ccdiff",
+    "version": "0.3.1",
+    "displayName": "ccdiff",
+    "cordova": {
+        "platforms": [
+            "android"
+        ],
+        "plugins": {
+            "cordova-plugin-inappbrowser": {},
+            "cordova-plugin-statusbar": {},
+            "cordova-clipboard": {}
+        }
+    },
+    "dependencies": {
+        "clipboard": "^2.0.4",
+        "cordova-android": "~7.1.4",
+        "cordova-clipboard": "git+https://github.com/ihadeed/cordova-clipboard.git"
+    }
+}

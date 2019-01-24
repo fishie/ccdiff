@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="se.rishie.ccdiff" version="0.3.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="se.rishie.ccdiff" version="0.3.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>ccdiff</name>
     <description>
         An app for comparing Chinese character strokes between different languages and regions.
@@ -7,11 +7,12 @@
     <author email="rishie_88@hotmail.com" href="http://ccdiff.rishie.se">
         Rishie Sharma
     </author>
+    <icon src="icon.png" />
     <content src="index.html" />
     <access origin="*" />
-    <preference name="StatusBarOverlaysWebView" value="false" />
-
-    <preference name="permissions" value="none"/>
-
-    <icon src="icon.png" />
+    <plugin name="cordova-plugin-inappbrowser" spec="~3.0.0" />
+    <plugin name="cordova-plugin-statusbar" spec="~2.4.2" />
+    <plugin name="cordova-clipboard" spec="https://github.com/ihadeed/cordova-clipboard" />
+    <preference name="StatusBarBackgroundColor" value="#4e4e4e" />
+    <engine name="android" spec="~7.1.4" />
 </widget>

@@ -64,23 +64,7 @@ angular.module('han').controller('MainController', function() {
         }
     ];
 
-    const textBox = document.getElementById('TextBox');
-
-    document.documentElement.addEventListener('touchstart', (event) => {
-        if (event.target !== textBox) {
-            textBox.blur();
-        } else if (document.activeElement === textBox) {
-            cordova.plugins.Keyboard.disableScroll(true);
-        }
-    });
-
-    document.documentElement.addEventListener('touchend', (event) => {
-        if (document.activeElement === textBox) {
-            cordova.plugins.Keyboard.disableScroll(false);
-        }
-    });
-
-    this.getVariants = function() {
+    this.getVariants = () => {
         this.variants = this.variantsMap[this.chars.charCodeAt(0)];
         let variantChars = [];
         if (this.variants) {
@@ -99,7 +83,7 @@ angular.module('han').controller('MainController', function() {
         return false;
     }
 
-    this.appendToHistory = function (chars) {
+    this.appendToHistory = (chars) => {
 
         trimmed = chars.trim();
         if ((trimmed !== "") && isChineseCharacter(trimmed[0])) {
@@ -117,12 +101,12 @@ angular.module('han').controller('MainController', function() {
         this.charhistory = noduplicate;
     };
 
-    this.charClick = function (char) {
-        this.chars = char;
-        this.appendToHistory(char);
+    this.setChars = (chars) => {
+        this.chars = chars;
+        this.appendToHistory(chars);
     };
 
-    this.toggleAbout = function() {
+    this.toggleAbout = () => {
         this.showAbout ^= true;
 
         if (this.showAbout) {
@@ -132,7 +116,7 @@ angular.module('han').controller('MainController', function() {
         }
     };
 
-    window.onpopstate = function(event) {
+    window.onpopstate = (event) => {
         let showAbout = false;
         if (event.state) {
             showAbout = event.state.showAbout;
@@ -144,7 +128,7 @@ angular.module('han').controller('MainController', function() {
         });
     }
 
-    this.openExternal = function(url) {
+    this.openExternal = (url) => {
         if (window.cordova) cordova.InAppBrowser.open(url, '_system');
         else window.open(url);
     };
