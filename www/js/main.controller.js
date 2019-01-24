@@ -83,6 +83,15 @@ angular.module('han').controller('MainController', function() {
         return false;
     }
 
+    this.hasChineseCharacter = (text) => {
+        for (let i = 0; i < text.length; i++) {
+            if (isChineseCharacter(text[i])) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     this.appendToHistory = (chars) => {
 
         trimmed = chars.trim();
@@ -94,9 +103,9 @@ angular.module('han').controller('MainController', function() {
         noduplicate = [];
         for (let i = this.charhistory.length; i--; i >= 0) {
 
-          if (this.charhistory[i] in d) continue;
-          noduplicate.unshift(this.charhistory[i]);
-          d[this.charhistory[i]] = 1;
+            if (this.charhistory[i] in d) continue;
+            noduplicate.unshift(this.charhistory[i]);
+            d[this.charhistory[i]] = 1;
         }
         this.charhistory = noduplicate;
     };

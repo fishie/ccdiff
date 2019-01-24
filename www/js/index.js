@@ -11,14 +11,18 @@ document.addEventListener('deviceready', () => {
 
     document.addEventListener('resume', () => {
         cordova.plugins.clipboard.paste((text) => {
-            if (!(typeof text === 'string' && text.trim() !== '')) {
+            if (!(typeof text === 'string' && text.trim() !== ''))
                 return;
-            }
+
             const scope = angular.element(document.body).scope();
+
+            if (!scope.main.hasChineseCharacter(text))
+                return;
+
             if (scope.main.previouslyPasted !== text) {
-              scope.main.setChars(text);
-              scope.main.previouslyPasted = text;
-              scope.$apply();
+                scope.main.setChars(text);
+                scope.main.previouslyPasted = text;
+                scope.$apply();
             }
         });
     }, false);

@@ -8,6 +8,7 @@
         "no-empty-function": "error",
         "prefer-arrow-callback": "error",
         "eqeqeq": "error",
-        "quotes": ["error", "single"]
+        "quotes": ["error", "single"],
+        "indent": "error"
     }
 }
