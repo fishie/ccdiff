@@ -5,7 +5,7 @@ angular.module('han').controller('MainController', function() {
     this.charhistory = [this.chars];
     this.variantsMap = variantsMap;
     this.variants = [];
-    this.previouslyPasted = "";
+    this.previouslyPasted = '';
     this.showAbout = false;
     this.fonts = [
         {
@@ -86,7 +86,7 @@ angular.module('han').controller('MainController', function() {
     this.appendToHistory = (chars) => {
 
         trimmed = chars.trim();
-        if ((trimmed !== "") && isChineseCharacter(trimmed[0])) {
+        if ((trimmed !== '') && isChineseCharacter(trimmed[0])) {
             this.charhistory.push(trimmed[0]);
         }
 
@@ -110,7 +110,7 @@ angular.module('han').controller('MainController', function() {
         this.showAbout ^= true;
 
         if (this.showAbout) {
-            window.history.pushState({showAbout: true}, "", "index.html");
+            window.history.pushState({showAbout: true}, '', 'index.html');
         } else {
             window.history.back();
         }
@@ -122,7 +122,7 @@ angular.module('han').controller('MainController', function() {
             showAbout = event.state.showAbout;
         }
 
-        const scope = angular.element(document.getElementById("Body")).scope();
+        const scope = angular.element(document.getElementById('Body')).scope();
         scope.$evalAsync((scope) => {
             scope.main.showAbout = showAbout;
         });

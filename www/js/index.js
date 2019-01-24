@@ -5,7 +5,7 @@ document.addEventListener('deviceready', () => {
         return;
 
     if (cordova.platformId === 'android') {
-        StatusBar.backgroundColorByHexString("#4e4e4e");
+        StatusBar.backgroundColorByHexString('#4e4e4e');
         StatusBar.styleLightContent();
     }
 
