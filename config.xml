@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="se.rishie.ccdiff" version="0.3.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="se.rishie.ccdiff.cordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>ccdiff</name>
     <description>
         An app for comparing Chinese character strokes between different languages and regions.
     </description>
-    <author email="rishie_88@hotmail.com" href="http://ccdiff.rishie.se">
+    <author email="rishie_88@hotmail.com" href="https://github.com/fishie/ccdiff">
         Rishie Sharma
     </author>
     <icon src="icon.png" />
